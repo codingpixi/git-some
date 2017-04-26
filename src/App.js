@@ -14,7 +14,6 @@ constructor() {
   this.focus = this.focus.bind(this);
 }
 
-
 //life cycle method
 componentDidMount () {
   //runs when the component is rendered for the 1st time
@@ -42,9 +41,15 @@ focus() {
 
     return (
       <div className="GithubApp">
+        <header className='App-header'>
+          <p className="who">github who</p>
+
+        </header>
+
         <div className="input">
           <input
             type="text"
+            placeholder="Searh Github User"
             ref={(input) => {this.textInput = input;}}/>
           <input
             type="button"
@@ -52,17 +57,21 @@ focus() {
             onClick={this.focus.bind(this)}
           />
         </div>
-        <div>
+        <section className="container">
+        <div className="githubUserInfo">
+          <img src={this.state.user.avatar_url} className="img-circle" alt="github user image"/>
           <h1>{this.state.user.name}</h1>
-          <p>{this.state.user.login}</p>
-          <img src={this.state.user.avatar_url} alt="github user image"/>
+          <p>&#64;{this.state.user.login}
           <br />
           <a href={this.state.user.html_url} target="_blank">Visit my github repository</a>
           <br />
           <a href={this.state.user.blog}>Blog</a>
-          <p>Location: {this.state.user.location}</p>
-          <p>{this.state.user.hireable ? "Hireable: Yes" : "Hireable: No"}</p>
+          <br />
+          Location: {this.state.user.location}
+          <br/>
+          Looking for a job:{this.state.user.hireable ? " Yes" : " No"}</p>
         </div>
+        </section>
       </div>
     );
   // } else {

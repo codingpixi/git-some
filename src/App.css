@@ -8,10 +8,12 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: #404040;
+  height: 250px;
   padding: 20px;
   color: white;
+  /*text-align: right;*/
+  font-size: 6em;
 }
 
 .App-intro {
@@ -21,4 +23,21 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+body {
+  background: #f5f2f0;
+}
+
+.img-circle {
+  border-radius: 50%;
+  height: auto;
+    width: auto;
+    max-width: 375px;
+    max-height: 375px;
+  box-shadow: 3px 3px 2px #888888;
+}
+
+.githubUserInfo {
+align-content: center;
 }
